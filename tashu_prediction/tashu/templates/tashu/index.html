@@ -1,0 +1,23 @@
+{% load static %}
+<html>
+  <head>
+    <title>타슈 실시간 예측</title>
+    <link rel = "stylesheet" type = "text/css" href = "{% static 'tashu/main_css.css' %}"/>
+  </head>
+  <body>
+    <div id = "main">
+      <div id = "imgBox" width = "200px" height="200px">
+        <img id = "tashu_logo" src = "{% static 'tashu/tashu_logo.jpg' %}" width = "200px" height="200px"></img>
+      </div>
+      <div id = "titleBox">
+        <h1 id = "titleText">타슈 실시간 예측 시스템 </h1>
+      </div>
+    </div>
+    <h1>정류소 번호를 입력하시오.(1~144)</h1>
+    <form action = "{%  url 'tashu:tashuStatus' %}" method= "get">
+    {% csrf_token %}
+    <input type = "text" name = "input_stationNum" id = "input_stationNum"/>
+    <input type = "submit" value = "입력" />
+    </form>
+  </body>
+</html>

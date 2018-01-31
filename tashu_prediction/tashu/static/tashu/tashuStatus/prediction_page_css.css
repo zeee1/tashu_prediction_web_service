@@ -1,0 +1,33 @@
+body {
+  background-color: #f7f9fc;
+  align-items: center;
+}
+
+#tashu_status{
+  margin:0 auto;
+}
+#tashu_map_status{
+  float:left;
+}
+
+#tmp_id{
+  display: inline-block;
+  margin: 1em;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+#prediction_history{
+  width: 80%;
+
+}
+
+#crnt_feature_data{
+  width: 80%;
+}
+
+.table_div_box{
+  margin :20px;
+}

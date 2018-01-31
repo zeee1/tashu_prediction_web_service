@@ -1,0 +1,70 @@
+{% load static %}
+<html>
+  <head>
+    <title>{{input_stationNum}} 번 정류소 예측</title>
+    <link rel = "stylesheet" type = "text/css" href = "{% static 'tashu/tashuStatus/prediction_page_css.css' %}"/>
+  </head>
+  <body>
+    <div id = "topBox">
+      <h1>{{input_stationNum}} 번 정류소 예측 결과</h1>
+    </div>
+    <div id = "middleBox">
+      <div id = "tashu_status">
+        <div id = "tashu_map_status">
+          <h3>실시간 타슈 현황</h3>
+          <iframe src = "https://www.tashu.or.kr/userpage/station/mapStatus.jsp?" width = "740" height="400" scrolling="auto" border="0" marginwidth = "0"></iframe>
+        </div>
+        <div id = "tmp_id">
+          <h3>준비중</h3>
+          <img src = "{% static 'tashu/tashuStatus/img_ready.jpg' %}" width = "740" height= "400"></img>
+        </div>
+      </div>
+      <div>
+        <h3>실시간 요인 데이터</h3>
+        <div class = "table_div_box">
+          <table id = "crnt_feature_data">
+            <tr>
+              <th>월</th>
+              <th>시간</th>
+              <th>요일</th>
+              <th>계절</th>
+              <th>기온</th>
+              <th>습도</th>
+              <th>풍속</th>
+              <th>강수량</th>
+              <th>적설량</th>
+            </tr>
+            <tr>
+              <td>{{month}}</td>
+              <td>{{hour}}</td>
+              <td>{{weekday}}</td>
+              <td>{{season}}</td>
+              <td>{{temperature}}</td>
+              <td>{{humidity}}</td>
+              <td>{{windspeed}}</td>
+              <td>{{rainfall}}</td>
+              <td>{{snowfall}}</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class = "table_div_box">
+        <h3>실시간 예측 결과</h3>
+        <div class = "table_div_box">
+          <table id = "prediction_history">
+            <tr>
+              <th>일시</th>
+              <th>예측 대여량</th>
+              <th>예측 반납량</th>
+              <th>실제 대여량</th>
+              <th>실제 반납량</th>
+            </tr>
+            <tr>
+            </tr>
+        </table>
+      </div>
+      </div>
+    </div>
+    <div id = "footerBox"></div>
+  </body>
+</html>
